@@ -1,10 +1,11 @@
 
 curr_sound = "";
+ANSWER = document.getElementById('answer');
 
 function quiz() {
 
     // Clear answer
-
+    
 
     // Gen list of checked boxes
     var checkboxes = document.getElementsByName('chord');
@@ -14,6 +15,12 @@ function quiz() {
             to_choose_from.push(checkbox);
             console.log("Found:");
         }
+    }
+
+    // Check if none selected
+    if (to_choose_from.length <= 0) {
+        alert("Please be sure to check at least one box.");
+        return;
     }
 
     // Choose random from list
